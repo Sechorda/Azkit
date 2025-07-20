@@ -1,0 +1,28 @@
+{
+  "name": "react-spa-msal-entra-id-quickstart",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^3.8.0",
+    "@azure/msal-react": "^3.0.0",
+    "@fluentui/react-components": "^9.46.3",
+    "react": "^19.0.0",
+    "react-dom": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^9",
+    "typescript": "^5",
+    "vite": "^5.1.4"
+  }
+}
