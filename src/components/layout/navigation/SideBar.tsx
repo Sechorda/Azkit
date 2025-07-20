@@ -12,9 +12,6 @@ const SideBar = () => {
         </NavLink>
       </div>
       <nav className="sidebar-nav">
-        <NavLink to="/profile" className="sidebar-link">
-          Profile
-        </NavLink>
         <NavLink to="/tool1" className="sidebar-link">
           Tool 1
         </NavLink>

@@ -1,5 +1,3 @@
-"use client";
-
 import { msGraphEndPoints } from "@/lib/msgraph/endpoints";
 import { fetcher } from "@/lib/msgraph/fetcher";
 import { AuthenticatedTemplate } from "@azure/msal-react";
