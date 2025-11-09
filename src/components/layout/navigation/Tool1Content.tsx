@@ -1,10 +1,11 @@
 import React from 'react'
 import PanelLayout from '../PanelLayout'
+import HardLinkTool from '../../../tools/HardLinkTool'
 
 const Tool1Content = () => {
   return (
-    <PanelLayout title="Tool 1">
-      {/* Tool 1 content will go here */}
+    <PanelLayout title="Hard Link On-Prem AD User to Cloud Identity">
+      <HardLinkTool />
     </PanelLayout>
   )
 }

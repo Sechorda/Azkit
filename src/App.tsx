@@ -16,7 +16,7 @@ import './styles/layout.css'
 
 export const APP_NAME = "Azkit";
 
-function App({ children }: { children: ReactNode }) {
+function App({ children }: { children?: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -32,26 +32,28 @@ function App({ children }: { children: ReactNode }) {
       <MsalClientProvider>
         <>
           {!sessionStorage.getItem('devMode') && <SignInScreen />}
-          <div className="toolbar">
-            <NavBar />
-          </div>
-          <div className="main-container">
-            <div className="side-panel">
-              <SideBar />
+          <div className="app-shell">
+            <div className="toolbar">
+              <NavBar />
             </div>
-          <div className="content-container">
-            <div className="content">
-              <Routes>
-                <Route path="/" element={<HomeContent />} />
-                <Route path="/dashboard" element={<Navigate to="/" replace />} />
-                <Route path="/tool1" element={<Tool1Content />} />
-                <Route path="/tool2" element={<Tool2Content />} />
-                <Route path="/tool3" element={<Tool3Content />} />
-                <Route path="/tool4" element={<Tool4Content />} />
-                {children}
-              </Routes>
+            <div className="main-container">
+              <div className="side-panel">
+                <SideBar />
+              </div>
+              <div className="content-container">
+                <div className="content">
+                  <Routes>
+                    <Route path="/" element={<HomeContent />} />
+                    <Route path="/dashboard" element={<Navigate to="/" replace />} />
+                    <Route path="/tool1" element={<Tool1Content />} />
+                    <Route path="/tool2" element={<Tool2Content />} />
+                    <Route path="/tool3" element={<Tool3Content />} />
+                    <Route path="/tool4" element={<Tool4Content />} />
+                    {children}
+                  </Routes>
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </>
       </MsalClientProvider>

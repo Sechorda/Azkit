@@ -13,7 +13,7 @@ const SideBar = () => {
       </div>
       <nav className="sidebar-nav">
         <NavLink to="/tool1" className="sidebar-link">
-          Tool 1
+          Hard link on-prem to cloud
         </NavLink>
         <NavLink to="/tool2" className="sidebar-link">
           Tool 2

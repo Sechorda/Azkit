@@ -1,5 +1,16 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevent whole-page scroll; internal panels manage their own scrolling */
+}
+
+#root {
+  height: 100%;
+  overflow: hidden; /* ensure the app-shell manages all scrolling */
 }

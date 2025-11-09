@@ -4,18 +4,16 @@ import { Card, Text, makeStyles } from '@fluentui/react-components'
 const useStyles = makeStyles({
   container: {
     backgroundColor: '#0a0a0a',
-    minHeight: '100vh',
-    paddingLeft: '200px',
-    width: 'calc(100% - 200px)'
+    minHeight: '100vh'
   },
   card: {
     backgroundColor: 'rgba(20, 20, 20, 0.9)',
     backdropFilter: 'blur(20px)',
-    padding: '0.75rem',
+    padding: 0,
     width: '100%',
     minHeight: '100%',
-    boxShadow: '0 0 10px 2px rgba(100, 149, 237, 0.1)',
-    marginLeft: '0.5rem'
+    boxShadow: 'none',
+    border: 'none'
   },
   property: {
     marginBottom: '0.5rem'
@@ -30,12 +28,23 @@ const useStyles = makeStyles({
   },
   title: {
     color: 'rgba(255, 255, 255, 0.95)',
-    marginBottom: '0.75rem',
-    padding: '0.75rem 1rem',
-    backgroundColor: 'rgba(30, 30, 30, 0.9)',
-    borderBottom: '1px solid rgba(100, 149, 237, 0.3)',
+    margin: 0,
+    padding: 0,
+    background: 'transparent',
+    boxSizing: 'border-box',
+    display: 'block',
     width: '100%',
-    display: 'block'
+    textAlign: 'center',
+    borderBottom: '1px solid rgba(100, 149, 237, 0.8)'
+  },
+  titleContent: {
+    display: 'block',
+    padding: '1rem',
+    lineHeight: '39px'
+  },
+  body: {
+    /* Keep content tight to the header border to avoid any perceived second line */
+    padding: '0 0.75rem 0.75rem 0.75rem'
   }
 })
 
@@ -52,9 +61,11 @@ const PanelLayout: React.FC<PanelLayoutProps> = ({ title, children }) => {
     <div className={styles.container}>
       <Card className={styles.card}>
         <Text size={600} as="h2" block className={styles.title}>
-          {title}
+          <span className={styles.titleContent}>{title}</span>
         </Text>
-        {children}
+        <div className={styles.body}>
+          {children}
+        </div>
       </Card>
     </div>
   )

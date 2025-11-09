@@ -1,18 +1,62 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
   background-color: #1c1c1c;
   color: white;
 }
 
+/* Align the inner navbar with the main layout: reserve a sidebar column so the brand lines up with the sidebar header */
+.navbar-inner {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Brand sits in the reserved sidebar column and is centered to line up with the sidebar header */
 .navbar-brand {
   font-size: 1.25rem;
   font-weight: bold;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Keep actions visually separated and aligned to the right side of the navbar */
 .navbar-actions {
   display: flex;
   gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  justify-self: end;
+  align-self: center;
+}
+
+@media (max-width: 640px) {
+  .navbar-inner {
+    /* collapse to a single column on small screens */
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+
+  .navbar-actions {
+    padding-right: 0;
+  }
 }

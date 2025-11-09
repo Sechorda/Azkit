@@ -4,7 +4,7 @@
   backdrop-filter: blur(20px);
   height: 100%;
   padding: 0.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden; /* prevent any sidebar scrolling */
 }
 
 .sidebar-nav {
@@ -17,7 +17,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0;
+  /* extend underline to the grid edge while preserving inner spacing */
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding: 0.5rem 0.5rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
