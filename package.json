@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "dev:full": "concurrently \"vite\" \"pwsh -File ./scripts/AzGraphBackend.ps1 -Port 8080\"",
+    "backend": "pwsh -File ./scripts/AzGraphBackend.ps1 -Port 8080",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
@@ -13,7 +15,7 @@
     "@azure/msal-react": "^3.0.0",
     "@fluentui/react-components": "^9.46.3",
     "react": "^19.0.0",
-    "react-dom": "latest",
+    "react-dom": "^19.0.0",
     "react-router-dom": "latest"
   },
   "devDependencies": {
@@ -21,6 +23,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "typescript": "^5",
     "vite": "^7.2.2"

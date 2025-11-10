@@ -4,7 +4,7 @@ import { Card, Text, makeStyles } from '@fluentui/react-components'
 const useStyles = makeStyles({
   container: {
     backgroundColor: '#0a0a0a',
-    minHeight: '100vh'
+    height: '100%' /* fill the scroll container instead of forcing viewport height */
   },
   card: {
     backgroundColor: 'rgba(20, 20, 20, 0.9)',

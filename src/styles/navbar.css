@@ -10,7 +10,7 @@
 /* Align the inner navbar with the main layout: reserve a sidebar column so the brand lines up with the sidebar header */
 .navbar-inner {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 240px 1fr; /* align with sidebar width */
   align-items: center;
   width: 100%;
   gap: 0;
@@ -40,6 +40,55 @@
   padding-right: 1rem;
   justify-self: end;
   align-self: center;
+}
+
+/* Environment mode badge */
+.env-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  background: #2e2e2e;
+  color: #ddd;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: 1;
+  min-width: 70px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.env-badge.server {
+  background: linear-gradient(135deg,#1d2f60,#304d9f);
+  border-color: #4b67b8;
+  color: #dfe7ff;
+}
+
+.env-badge.client {
+  background: linear-gradient(135deg,#1d3a2c,#256842);
+  border-color: #3f8d5a;
+  color: #d4fbe5;
+}
+
+.env-badge.unknown {
+  background: #444;
+  border-color: #666;
+  color: #eee;
+  opacity: 0.8;
+}
+
+.env-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: currentColor;
+  box-shadow: 0 0 4px currentColor;
 }
 
 @media (max-width: 640px) {
